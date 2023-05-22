@@ -19,4 +19,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Empleados\" />
+    <Folder Include="Pages\Clientes\" />
+    <Folder Include="Pages\Account\" />
+    <Folder Include="Pages\ServiciosRealizados\" />
+    <Folder Include="Pages\Servicios\" />
+  </ItemGroup>
+
 </Project>
