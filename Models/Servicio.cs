@@ -10,8 +10,8 @@
         public int ClienteId { get; set; }
         public int EmpleadoId { get; set; }
 
-        public Cliente Cliente { get; set;}
-        public Empleado Empleado { get; set;}
+        public Cliente Cliente { get; set;} = default!;
+		public Empleado Empleado { get; set;} = default!;
 
-    }
+	}
 }

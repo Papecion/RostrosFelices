@@ -13,14 +13,12 @@ namespace RostrosFelices.Pages.Account
         {
             _context = context;
         }
-
         public IActionResult OnGet()
         {
             return Page();
         }
 
         [BindProperty]
-
         public User User { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
@@ -32,7 +30,7 @@ namespace RostrosFelices.Pages.Account
 
             _context.Users.Add(User);
             await _context.SaveChangesAsync();
-            return RedirectToPage("/Index");
+            return RedirectToPage("../Index");
         }
     }
 }
