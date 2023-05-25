@@ -12,7 +12,7 @@ namespace RostrosFelices.Data
         }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Empleado> Empleados { get; set; }
-        public DbSet<MetodoDePago> MetodosDePagos { get; set; }
+        public DbSet<Dato> Datos { get; set; }
         public DbSet<Servicio> Servicios { get; set; }
         public DbSet<User> Users { get; set; }
     }
