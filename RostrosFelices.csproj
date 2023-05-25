@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Empleados\" />
     <Folder Include="Pages\ServiciosRealizados\" />
     <Folder Include="Pages\Servicios\" />
   </ItemGroup>

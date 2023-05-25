@@ -4,24 +4,32 @@
 }
 <h1>GESTION DE CLIENTES</h1>
 <p>
-    <a asp-page="Create" class="btn btn-success">CREA TU USUARIO AQUI</a>
+    <a asp-page="Create" class="btn btn-success">INGRESA CLIENTE</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.Clientes[0].Documento)
+            </th>
             <th>
                 @Html.DisplayNameFor(model=>model.Clientes[0].Nombre)
             </th>
             <th>
                 @Html.DisplayNameFor(model=>model.Clientes[0].Apellido)
             </th>
-            <th>Actions</th>
+
+
+            <th>OPCIONES</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Clientes)
         {
             <tr>
+                <th>
+                    @Html.DisplayFor(modelItem=>item.Documento)
+                </th>
                 <td>
                     @Html.DisplayFor(modelItem=>item.Nombre)
                 </td>
@@ -29,13 +37,11 @@
                     @Html.DisplayFor(modelItem=>item.Apellido)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Modificar</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Borrar</a>
                 </td>
-                <td>
-                    <span></span>
-                </td>
-            </tr>
+          
+           </tr>
         }
     </tbody>
 </table>
