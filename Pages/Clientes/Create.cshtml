@@ -12,7 +12,13 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Cliente.Id" class="control-label"></label>
-                <select asp-for="Cliente.Id" class="form-control" asp-items="ViewBag.UserId"></select>
+                <select asp-for="Cliente.Id" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                <span asp-validation-for="Cliente.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cliente.Documento" class="control-label"></label>
+                <input asp-for="Cliente.Documento" class="form-control" />
+                <span asp-validation-for="Cliente.Documento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cliente.Nombre" class="control-label"></label>
