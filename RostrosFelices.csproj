@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\ServiciosRealizados\" />
-    <Folder Include="Pages\Servicios\" />
   </ItemGroup>
 
 </Project>

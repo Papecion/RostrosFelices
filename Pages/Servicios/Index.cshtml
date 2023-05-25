@@ -1,5 +1,5 @@
 ﻿@page
-@model RostrosFelices.Pages.Clientes.IndexModel
+@model RostrosFelices.Pages.Servicios.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,28 +14,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cliente[0].Nombre)
+                @Html.DisplayNameFor(model => model.Servicio[0].Fecha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cliente[0].Apellido)
+                @Html.DisplayNameFor(model => model.Servicio[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cliente[0].Documento)
+                @Html.DisplayNameFor(model => model.Servicio[0].Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servicio[0].Precio)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Cliente) {
+@foreach (var item in Model.Servicio) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
+                @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Documento)
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

@@ -1,20 +1,18 @@
 ﻿@page
 @model RostrosFelices.Pages.Clientes.CreateModel
-@{
-}
-<h1>REGISTRO DE CLIENTE</h1>
 
-<h4>Invoice</h4>
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Cliente</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Cliente.Documento" class="control-label"></label>
-                <input asp-for="Cliente.Documento" class="form-control" />
-                <span asp-validation-for="Cliente.Documento" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="Cliente.Nombre" class="control-label"></label>
                 <input asp-for="Cliente.Nombre" class="form-control" />
@@ -25,18 +23,22 @@
                 <input asp-for="Cliente.Apellido" class="form-control" />
                 <span asp-validation-for="Cliente.Apellido" class="text-danger"></span>
             </div>
-            <div class="form-group mt-3">
-                <input type="submit" value="REGISTRAR" class="btn btn-success" />
-                <a asp-page="Index" class="btn btn-primary">CANCELAR</a>
+            <div class="form-group">
+                <label asp-for="Cliente.Documento" class="control-label"></label>
+                <input asp-for="Cliente.Documento" class="form-control" />
+                <span asp-validation-for="Cliente.Documento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

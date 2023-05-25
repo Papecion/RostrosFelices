@@ -1,21 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RostrosFelices.Data;
 using RostrosFelices.Models;
 
 namespace RostrosFelices.Pages.Clientes
 {
-    public class ModificarModel : PageModel
+    public class EditModel : PageModel
     {
-        private readonly RostrosFelicesContext _context;
+        private readonly RostrosFelices.Data.RostrosFelicesContext _context;
 
-        public ModificarModel(RostrosFelicesContext context)
+        public EditModel(RostrosFelices.Data.RostrosFelicesContext context)
         {
             _context = context;
         }
-        [BindProperty]
 
+        [BindProperty]
         public Cliente Cliente { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -24,29 +29,32 @@ namespace RostrosFelices.Pages.Clientes
             {
                 return NotFound();
             }
-            var category = await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+
+            var cliente =  await _context.Clientes.FirstOrDefaultAsync(m => m.Id == id);
+            if (cliente == null)
             {
                 return NotFound();
             }
-            Cliente = category;
+            Cliente = cliente;
             return Page();
         }
 
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
+
             _context.Attach(Cliente).State = EntityState.Modified;
+
             try
             {
                 await _context.SaveChangesAsync();
             }
-
             catch (DbUpdateConcurrencyException)
-
             {
                 if (!ClienteExists(Cliente.Id))
                 {
@@ -57,15 +65,13 @@ namespace RostrosFelices.Pages.Clientes
                     throw;
                 }
             }
+
             return RedirectToPage("./Index");
-
-
         }
+
         private bool ClienteExists(int id)
-
         {
-            return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Clientes?.Any(e => e.Id == id)).GetValueOrDefault();
         }
-
     }
 }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using RostrosFelices.Data;
 using RostrosFelices.Models;
 
-namespace RostrosFelices.Pages.Clientes
+namespace RostrosFelices.Pages.Servicios
 {
     public class CreateModel : PageModel
     {
@@ -25,18 +25,18 @@ namespace RostrosFelices.Pages.Clientes
         }
 
         [BindProperty]
-        public Cliente Cliente { get; set; } = default!;
+        public Servicio Servicio { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Clientes == null || Cliente == null)
+          if (!ModelState.IsValid || _context.Servicios == null || Servicio == null)
             {
                 return Page();
             }
 
-            _context.Clientes.Add(Cliente);
+            _context.Servicios.Add(Servicio);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

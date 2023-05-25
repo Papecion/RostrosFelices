@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using RostrosFelices.Data;
 using RostrosFelices.Models;
 
-namespace RostrosFelices.Pages.Clientes
+namespace RostrosFelices.Pages.Servicios
 {
     public class IndexModel : PageModel
     {
@@ -19,13 +19,13 @@ namespace RostrosFelices.Pages.Clientes
             _context = context;
         }
 
-        public IList<Cliente> Cliente { get;set; } = default!;
+        public IList<Servicio> Servicio { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Clientes != null)
+            if (_context.Servicios != null)
             {
-                Cliente = await _context.Clientes.ToListAsync();
+                Servicio = await _context.Servicios.ToListAsync();
             }
         }
     }
