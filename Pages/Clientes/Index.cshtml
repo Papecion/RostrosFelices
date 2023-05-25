@@ -1,42 +1,41 @@
 ﻿@page
 @model RostrosFelices.Pages.Clientes.IndexModel
-
 @{
-    ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
-
+<h1>GESTION DE CLIENTES</h1>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-success">CREA TU USUARIO AQUI</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Cliente[0].Nombre)
+                @Html.DisplayNameFor(model=>model.Clientes[0].Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cliente[0].Apellido)
+                @Html.DisplayNameFor(model=>model.Clientes[0].Apellido)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Cliente) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Clientes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Apellido)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+                <td>
+                    <span></span>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
