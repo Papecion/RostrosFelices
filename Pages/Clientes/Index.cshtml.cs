@@ -12,21 +12,20 @@ namespace RostrosFelices.Pages.Clientes
 {
     public class IndexModel : PageModel
     {
-        private readonly RostrosFelices.Data.RostrosFelicesContext _context;
+        private readonly RostrosFelicesContext _context;
 
-        public IndexModel(RostrosFelices.Data.RostrosFelicesContext context)
+        public IndexModel(RostrosFelicesContext context)
         {
             _context = context;
         }
 
-        public IList<Cliente> Cliente { get;set; } = default!;
+        public IList<Cliente> Clientes { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (_context.Clientes != null)
-            {
-                Cliente = await _context.Clientes.ToListAsync();
-            }
+
+            Clientes = await _context.Clientes.ToListAsync();
+            return Page();
         }
     }
 }

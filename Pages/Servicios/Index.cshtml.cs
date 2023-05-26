@@ -19,14 +19,15 @@ namespace RostrosFelices.Pages.Servicios
             _context = context;
         }
 
-        public IList<Servicio> Servicio { get;set; } = default!;
+        public IList<Servicio> Servicios { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (_context.Servicios != null)
-            {
-                Servicio = await _context.Servicios.ToListAsync();
-            }
+            
+                Servicios = await _context.Servicios.ToListAsync();
+
+                return Page();
+            
         }
     }
 }

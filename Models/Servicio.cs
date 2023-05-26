@@ -10,7 +10,6 @@ namespace RostrosFelices.Models
         public string Name { get; set; }
         public string Tipo { get; set; }
 
-        [Column(TypeName = "decimal (6,2)")]
         public decimal Precio { get; set; }
         ICollection<User> Users { get; set; } = default!;
     }

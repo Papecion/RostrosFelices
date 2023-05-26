@@ -14,19 +14,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Empleado[0].Nombre)
+                @Html.DisplayNameFor(model => model.Empleados[0].Nombre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Empleado[0].Apellido)
+                @Html.DisplayNameFor(model => model.Empleados[0].Apellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Empleado[0].Cargo)
+                @Html.DisplayNameFor(model => model.Empleados[0].Cargo)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Empleado) {
+@foreach (var item in Model.Empleados) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)

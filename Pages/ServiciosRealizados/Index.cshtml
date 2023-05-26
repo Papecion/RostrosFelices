@@ -1,5 +1,5 @@
 ﻿@page
-@model RostrosFelices.Pages.Servicios.IndexModel
+@model RostrosFelices.Pages.ServiciosRealizados.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,34 +14,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Servicios[0].Fecha)
+                @Html.DisplayNameFor(model => model.Dato[0].Fecha)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Servicios[0].Name)
+                @Html.DisplayNameFor(model => model.Dato[0].Cliente)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Servicios[0].Tipo)
+                @Html.DisplayNameFor(model => model.Dato[0].Empleado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Servicios[0].Precio)
+                @Html.DisplayNameFor(model => model.Dato[0].Servicio)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Servicios) {
+@foreach (var item in Model.Dato) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Cliente.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
+                @Html.DisplayFor(modelItem => item.Empleado.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Precio)
+                @Html.DisplayFor(modelItem => item.Servicio.Id)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

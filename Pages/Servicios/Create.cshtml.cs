@@ -12,9 +12,9 @@ namespace RostrosFelices.Pages.Servicios
 {
     public class CreateModel : PageModel
     {
-        private readonly RostrosFelices.Data.RostrosFelicesContext _context;
+        private readonly RostrosFelicesContext _context;
 
-        public CreateModel(RostrosFelices.Data.RostrosFelicesContext context)
+        public CreateModel(RostrosFelicesContext context)
         {
             _context = context;
         }
