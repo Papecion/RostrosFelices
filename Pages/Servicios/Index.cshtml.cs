@@ -12,9 +12,9 @@ namespace RostrosFelices.Pages.Servicios
 {
     public class IndexModel : PageModel
     {
-        private readonly RostrosFelices.Data.RostrosFelicesContext _context;
+        private readonly RostrosFelicesContext _context;
 
-        public IndexModel(RostrosFelices.Data.RostrosFelicesContext context)
+        public IndexModel(RostrosFelicesContext context)
         {
             _context = context;
         }
