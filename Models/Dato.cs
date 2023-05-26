@@ -2,15 +2,16 @@
 {
     public class Dato
     {
-        public string Codigo { get; set; }
         public int Id { get; set; }
+        public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
+        public Cliente Cliente { get; set; }
         public int EmpleadoId { get; set; }
+        public Empleado Empleado { get; set; }
         public int ServicioId { get;  set; }
+        public Servicio Servicio { get; set; }
 
-        public ICollection<Empleado>? Empleados { get; set; } = default!;
-        public ICollection<Cliente>? Clientes { get; set; } = default!;
-        public ICollection<Servicio>? Servicios { get; set; } = default!;
+        
 
     }
 }

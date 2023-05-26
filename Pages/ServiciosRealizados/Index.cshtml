@@ -2,37 +2,3 @@
 @model RostrosFelices.Pages.ServiciosRealizados.IndexModel
 @{
 }
-<h1>REGISTRO DE SERVICIOS</h1>
-
-<form method="post">
-    <div>
-        <label for="nombre">Name del producto:</label>
-        <input type="text" id="nombre" name="nombre" />
-        <input type="submit" value="Buscar" />
-    </div>
-</form>
-
-@if (Model.Dato != null)
-{
-    <h2>Detalles del producto:</h2>
-    <p>ID: @Model.Dato.Id</p>
-        <p>CLIENTE: @Model.Servicio.Nombre</p>
-        <p>EMPLEADO: @Model.Empleado.Nombre</p>
-        <p>SERVICIO: @Model.Cliente.Nombre</p>
-    <h2>Realizar Servicio:</h2>
-    <form method="post">
-        <input type="hidden" id="id" name="id" value="@Model.Dato.Id" />
-        <div>
-            <label for="cantidad">Cantidad:</label>
-            <input type="text" id="cantidad" name="cantidad" />
-            <input type="submit" value="Comprar" />
-        </div>
-
-
-    </form>
-}
-
-@if (Model.ErrorMessage != null)
-{
-    <p>Error: @Model.ErrorMessage</p>
-}
