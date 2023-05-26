@@ -2,10 +2,10 @@
 @model RostrosFelices.Pages.Empleados.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "EMPLEADOS";
 }
 
-<h1>Create</h1>
+<h1>GESTION DE EMPLEADOS</h1>
 
 <h4>Empleado</h4>
 <hr />
@@ -29,15 +29,13 @@
                 <span asp-validation-for="Empleado.Cargo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="CREAR" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

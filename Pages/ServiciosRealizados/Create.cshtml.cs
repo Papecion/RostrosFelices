@@ -55,8 +55,8 @@ namespace RostrosFelices.Pages.ServiciosRealizados
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-                if (!ModelState.IsValid)
+           
+                if (!ModelState.IsValid || _context.Datos == null || Dato == null)
                 {
                     Clientes = _context.Clientes
                         .Select(c => new SelectListItem

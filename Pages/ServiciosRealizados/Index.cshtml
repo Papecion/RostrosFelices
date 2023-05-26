@@ -2,13 +2,13 @@
 @model RostrosFelices.Pages.ServiciosRealizados.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "SERVICIOS GESTIONADOS";
 }
 
-<h1>Index</h1>
+<h1>REGISTRO DE SERVICIOS REALIZADOS</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -25,28 +25,29 @@
             <th>
                 @Html.DisplayNameFor(model => model.Dato[0].Servicio)
             </th>
-            <th></th>
+            <th>OPCIONES</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Dato) {
+@foreach (var item in Model.Dato) 
+{
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cliente.Id)
+                @Html.DisplayFor(modelItem => item.ClienteId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Empleado.Id)
+                @Html.DisplayFor(modelItem => item.EmpleadoId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Servicio.Id)
+                @Html.DisplayFor(modelItem => item.ServicioId)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Modificar</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-secondary">Detalles</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
 }
