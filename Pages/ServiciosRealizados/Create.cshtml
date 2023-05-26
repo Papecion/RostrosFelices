@@ -1,0 +1,38 @@
+﻿@page
+@model RostrosFelices.Pages.ServiciosRealizados.CreateModel
+@{
+    ViewData["Title"] = "REGISTRO DE SERVICIOS";
+}
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Dato.ClienteId" class="control-label"></label>
+                <select asp-for="Dato.ClienteId" class="form-control" asp-items="Model.Clientes"></select>
+                <span asp-validation-for="Dato.ClienteId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dato.EmpleadoId" class="control-label"></label>
+                <select asp-for="Dato.EmpleadoId" class="form-control" asp-items="Model.Empleados"></select>
+                <span asp-validation-for="Dato.EmpleadoId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dato.ServicioId" class="control-label"></label>
+                <select asp-for="Dato.ServicioId" class="form-control" asp-items="Model.Servicios"></select>
+                <span asp-validation-for="Dato.ServicioId" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

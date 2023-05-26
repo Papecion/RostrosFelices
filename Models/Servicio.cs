@@ -12,7 +12,6 @@ namespace RostrosFelices.Models
 
         [Column(TypeName = "decimal (6,2)")]
         public decimal Precio { get; set; }
-        ICollection<Dato> Datos { get; set; } = default!;
-
+        ICollection<User> Users { get; set; } = default!;
     }
 }

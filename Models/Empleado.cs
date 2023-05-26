@@ -6,6 +6,6 @@
         public string Nombre { get; set;}
         public string Apellido { get; set;}
         public string Cargo { get; set; }
-        ICollection<Dato> Datos { get; set; } = default!;
+        ICollection<User> Users { get; set; } = default!; 
     }
 }

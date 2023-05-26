@@ -7,7 +7,7 @@
         public string Apellido { get; set; }
         public string Documento { get; set; }
 
-        ICollection<Dato> Datos { get; set; } = default!;
+        ICollection<User> Users { get; set; } = default!; 
 
 	}
 }
